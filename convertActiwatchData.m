@@ -68,9 +68,9 @@ for iSheet = 1:numel(sheets)
     data.Observation = data.DateTime >= startIntervention & data.DateTime <= endIntervention;
     data.Compliance  = compliance & data.Observation;
     
-    dataArray(iSheet*2 - 1).subject = thisSubject;
-    dataArray(iSheet*2 - 1).session = 'Intervention';
-    dataArray(iSheet*2 - 1).data = data;
+    dataArray(iSheet*2).subject = thisSubject;
+    dataArray(iSheet*2).session = 'Intervention';
+    dataArray(iSheet*2).data = data;
 end
 
 delete(h);
