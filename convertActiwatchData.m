@@ -57,7 +57,7 @@ for iSheet = 1:numel(sheets)
     
     % Save to data array
     % Baseline
-    data.Observation = data.DateTime >= startBaseline & data.DateTime <= endBaseline;
+    data.Observation = data.DateTime >= startBaseline & data.DateTime < endBaseline;
     data.Compliance  = compliance & data.Observation;
     
     dataArray(iSheet*2 - 1).subject = thisSubject;
@@ -65,7 +65,7 @@ for iSheet = 1:numel(sheets)
     dataArray(iSheet*2 - 1).data = data;
     
     % Intervention
-    data.Observation = data.DateTime >= startIntervention & data.DateTime <= endIntervention;
+    data.Observation = data.DateTime >= startIntervention & data.DateTime < endIntervention;
     data.Compliance  = compliance & data.Observation;
     
     dataArray(iSheet*2).subject = thisSubject;
